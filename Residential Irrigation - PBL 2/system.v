@@ -1,20 +1,16 @@
 // Declaração do modulo
-module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, l0, l1, l2, l3, l4, l5, l6, selector, d1, d2, d3, d4, clk);
+module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0, l1, l2, l3, l4, l5, l6, selector, d0, d1, d2, d3, clk, a, b, c, d, e, f, g);
 
 	// Declaração as portas
 	input h, m, l, us, ua, t, selector, clk;
-	output alarme, ValvulaEntrada, l0, l1, l2, l3, l4, l5, l6, d1, d2, d3, d4;
+	output alarme, ValvulaEntrada, l0, l1, l2, l3, l4, l5, l6, a, b, c, d, e, f, g;
+	inout C0, C1, C2, C3, C4, d0, d1, d2, d3;
 	
 	// Fios intermediarios entre módulos
-	wire gotejamentoWire, aspersaoWire;
+	wire gotejamentoWire, aspersaoWire, clk_delay, clk_delay1sec;
 	wire l0RegaMultiplex, l1RegaMultiplex, l2RegaMultiplex, l3RegaMultiplex, l4RegaMultiplex, l5RegaMultiplex, l6RegaMultiplex;
 	wire l0NivelMultiplex, l1NivelMultiplex, l2NivelMultiplex, l3NivelMultiplex, l4NivelMultiplex, l5NivelMultiplex, l6NivelMultiplex;
 	wire C0Wire, C1Wire, C2Wire, C3Wire, C4Wire;
-	
-	// Logica do circuito
-	not (d1, 1'b0); 
-	not (d2, 1'b0);
-	not (d3, 1'b0);
 	
 	// Instanciação do módulo Alarm
 	alarm alarm(
@@ -39,7 +35,7 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, l0, l1, l2, l3, l4, l5
 		.ua(ua),
 		.t (t),
 		.m (m),
-		.gotejamento (gotejamentoWire),
+		.Vg (gotejamentoWire),
 		.alin (alarme)
 	);
 
@@ -47,19 +43,35 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, l0, l1, l2, l3, l4, l5
 	aspersao as(
 		.us (us),
 		.alin (alarme),
-		.gotejamento(gotejamentoWire),
-		.aspersao (aspersaoWire)
+		.Vg (gotejamentoWire),
+		.Va (aspersaoWire)
+	);
+	
+	// Instanciação do módulo responsavel pelo Delay
+	delay dl(
+	
+	.clk(clk),
+	.Q_out(clk_delay),
+
+	);
+	
+	// Instanciação do módulo responsavel pelo Delay de 1 segundo
+	delayC dlc(
+	
+	.clk(clk_delay),
+	.Q_out(clk_delay1sec),
+
 	);
 	
 	// Instanciação do decorderColunas
 	decoderColuna dC(
 	
-	.clk(clk),
-	.C0(C0Wire),
-	.C1(C1Wire),
-	.C2(C2Wire),
-	.C3(C3Wire),
-	.C4(C4Wire)
+	.clk(clk_delay),
+	.C0(C0),
+	.C1(C1),
+	.C2(C2),
+	.C3(C3),
+	.C4(C4)
 	
 	); 
 	
@@ -68,11 +80,11 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, l0, l1, l2, l3, l4, l5
 		.h (h),
 		.m (m),
 		.l (l),
-		.C0 (C0Wire),
-		.C1 (C1Wire),
-		.C2 (C2Wire),
-		.C3 (C3Wire),
-		.C4 (C4Wire),
+		.C0 (C0),
+		.C1 (C1),
+		.C2 (C2),
+		.C3 (C3),
+		.C4 (C4),
 		.l0 (l0NivelMultiplex),
 		.l1 (l1NivelMultiplex),
 		.l2 (l2NivelMultiplex),
@@ -86,11 +98,11 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, l0, l1, l2, l3, l4, l5
 	decoderIrrigacao di(
 		.as (aspersaoWire),
 		.gt (gotejamentoWire),
-		.C0 (C0Wire),
-		.C1 (C1Wire),
-		.C2 (C2Wire),
-		.C3 (C3Wire),
-		.C4 (C4Wire),
+		.C0 (C0),
+		.C1 (C1),
+		.C2 (C2),
+		.C3 (C3),
+		.C4 (C4),
 		.l0 (l0RegaMultiplex),
 		.l1 (l1RegaMultiplex),
 		.l2 (l2RegaMultiplex),
@@ -126,4 +138,25 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, l0, l1, l2, l3, l4, l5
 	.l6 (l6)
 	);
 	
+	
+	// Instanciação do cronometro
+	cronometro timer(
+		.d0(d0),
+		.d1(d1),
+		.d2(d2),
+		.d3(d3),
+		.clk_counter(clk_delay1sec),
+		.clk_mux(clk_delay),
+		.us(us),
+		.alin(alarme),
+		.a(a),
+		.b(b),
+		.c(c),
+		.d(d),
+		.e(e),
+		.f(f),
+		.g(g)
+	);
+	
+
 endmodule

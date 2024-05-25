@@ -1,9 +1,9 @@
 // Declaração do módulo
-module gotejamento (us, ua, t, m, alin, gotejamento);
+module gotejamento (us, ua, t, m, alin, Vg);
 
 	// Declaração das portas
 	input us, ua, t, alin, m;
-	output gotejamento;
+	output Vg;
 	
 	// Declaração dos fios intermediários
 	wire w1, w2, w3, w4, w5, w6;
@@ -15,6 +15,6 @@ module gotejamento (us, ua, t, m, alin, gotejamento);
 	and and0 (w4, w3, ua);
 	or or0 (w5, w2, w4);
 	not not0 (w6, alin);
-	and and1 (gotejamento, w5, w6);
+	and and1 (Vg, w5, w6);
 	
 endmodule

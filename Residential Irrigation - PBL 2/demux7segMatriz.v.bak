@@ -1,0 +1,37 @@
+module demux7segMatriz(D0, D1, D2, D3, clk);
+	
+	// Declaraçao de entradas e saidas
+	input clk;
+	output D0, D1, D2, D3;
+	
+	// Declaraçao Fios intermediarios
+	wire Q_F0, Q_F1, clk_delay, A_bar, B_bar;
+	wire A, B;
+	
+	delay dl(
+	
+	.clk(clk),
+	.Q_out(clk_delay),
+
+);
+	
+	dFlipFlop F0(
+
+	.d(Q_F0),
+	.rstn(),
+	.clk(clk),
+	.q(B),
+	.q_(Q_F0),
+
+);
+
+	dFlipFlop F1(
+
+	.d(Q_F1),
+	.rstn(),
+	.clk(Q_F0),
+	.q(A),
+	.q_(Q_F1),
+
+
+endmodule

@@ -1,0 +1,595 @@
+|system
+h => h.IN3
+m => m.IN4
+l => l.IN3
+us => us.IN3
+ua => ua.IN1
+t => t.IN1
+ValvulaEntrada << ValvulaEntrada:ve.ve
+alarme << alarme.DB_MAX_OUTPUT_PORT_TYPE
+C0 <> decoderColuna:dC.C0
+C0 <> decoderNivelDagua:dnd.C0
+C0 <> decoderIrrigacao:di.C0
+C1 <> decoderColuna:dC.C1
+C1 <> decoderNivelDagua:dnd.C1
+C1 <> decoderIrrigacao:di.C1
+C2 <> decoderColuna:dC.C2
+C2 <> decoderNivelDagua:dnd.C2
+C2 <> decoderIrrigacao:di.C2
+C3 <> decoderColuna:dC.C3
+C3 <> decoderNivelDagua:dnd.C3
+C3 <> decoderIrrigacao:di.C3
+C4 <> decoderColuna:dC.C4
+C4 <> decoderNivelDagua:dnd.C4
+C4 <> decoderIrrigacao:di.C4
+l0 << multiplexador:mux.l0
+l1 << multiplexador:mux.l1
+l2 << multiplexador:mux.l2
+l3 << multiplexador:mux.l3
+l4 << multiplexador:mux.l4
+l5 << multiplexador:mux.l5
+l6 << multiplexador:mux.l6
+selector => selector.IN1
+d0 <> cronometro:timer.d0
+d1 <> cronometro:timer.d1
+d2 <> cronometro:timer.d2
+d3 <> cronometro:timer.d3
+clk => clk.IN1
+a << cronometro:timer.a
+b << cronometro:timer.b
+c << cronometro:timer.c
+d << cronometro:timer.d
+e << cronometro:timer.e
+f << cronometro:timer.f
+g << cronometro:timer.g
+
+
+|system|alarm:alarm
+h => and0.IN1
+h => nor0.IN0
+m => nand0.IN0
+l => nand0.IN1
+l => nor0.IN1
+al <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|ValvulaEntrada:ve
+h => nor0.IN0
+h => nor1.IN0
+m => nor1.IN1
+l => nor1.IN2
+alin => nor0.IN1
+ve <= or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|gotejamento:gt
+us => nor0.IN1
+us => nor1.IN0
+ua => nand0.IN0
+ua => and0.IN1
+t => nand0.IN1
+t => nor1.IN1
+m => nor1.IN2
+alin => and1.IN1
+Vg <= and1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|aspersao:as
+us => nor0.IN0
+Vg => nor0.IN1
+alin => nor0.IN2
+Va <= nor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl
+clk => clk.IN1
+Q_out <= Q_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F3
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F4
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F5
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F6
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F7
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F8
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc
+clk => ~NO_FANOUT~
+Q_out <= Q_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|decoderColuna:dC
+C0 <= and1.DB_MAX_OUTPUT_PORT_TYPE
+C1 <= and2.DB_MAX_OUTPUT_PORT_TYPE
+C2 <= and3.DB_MAX_OUTPUT_PORT_TYPE
+C3 <= and4.DB_MAX_OUTPUT_PORT_TYPE
+C4 <= and5.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN1
+
+
+|system|decoderColuna:dC|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|decoderColuna:dC|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|decoderColuna:dC|dFlipFlop:F2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|decoderNivelDagua:dnd
+h => and13.IN0
+h => and0.IN1
+h => and2.IN0
+h => and4.IN0
+h => and11.IN0
+h => and16.IN0
+m => or0.IN0
+m => or3.IN1
+m => and4.IN1
+m => or7.IN0
+m => and11.IN1
+m => and13.IN1
+m => and16.IN1
+l => or0.IN1
+l => and2.IN1
+l => or3.IN2
+l => or7.IN1
+l => and11.IN2
+l => or10.IN1
+l => and16.IN2
+C0 => or1.IN0
+C0 => or6.IN0
+C1 => or1.IN1
+C1 => or6.IN1
+C2 => or2.IN0
+C2 => or6.IN2
+C3 => or2.IN1
+C3 => or6.IN3
+C4 => or2.IN2
+C4 => and6.IN1
+l0 <= and0.DB_MAX_OUTPUT_PORT_TYPE
+l1 <= or4.DB_MAX_OUTPUT_PORT_TYPE
+l2 <= or5.DB_MAX_OUTPUT_PORT_TYPE
+l3 <= or8.DB_MAX_OUTPUT_PORT_TYPE
+l4 <= or9.DB_MAX_OUTPUT_PORT_TYPE
+l5 <= or11.DB_MAX_OUTPUT_PORT_TYPE
+l6 <= and16.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|decoderIrrigacao:di
+as => and1.IN0
+as => and0.IN0
+as => and2.IN0
+gt => and0.IN1
+gt => and1.IN1
+gt => and2.IN1
+C0 => ~NO_FANOUT~
+C1 => or0.IN0
+C1 => and5.IN1
+C1 => or4.IN0
+C2 => or0.IN1
+C2 => and4.IN1
+C2 => or4.IN1
+C2 => and7.IN1
+C3 => or0.IN2
+C4 => or0.IN3
+l0 <= and2.DB_MAX_OUTPUT_PORT_TYPE
+l1 <= or1.DB_MAX_OUTPUT_PORT_TYPE
+l2 <= or2.DB_MAX_OUTPUT_PORT_TYPE
+l3 <= or3.DB_MAX_OUTPUT_PORT_TYPE
+l4 <= or5.DB_MAX_OUTPUT_PORT_TYPE
+l5 <= or6.DB_MAX_OUTPUT_PORT_TYPE
+l6 <= or7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|multiplexador:mux
+l0 <= or0.DB_MAX_OUTPUT_PORT_TYPE
+l1 <= or1.DB_MAX_OUTPUT_PORT_TYPE
+l2 <= or2.DB_MAX_OUTPUT_PORT_TYPE
+l3 <= or3.DB_MAX_OUTPUT_PORT_TYPE
+l4 <= or4.DB_MAX_OUTPUT_PORT_TYPE
+l5 <= or5.DB_MAX_OUTPUT_PORT_TYPE
+l6 <= or6.DB_MAX_OUTPUT_PORT_TYPE
+l0r => and0.IN0
+l1r => and2.IN0
+l2r => and4.IN0
+l3r => and6.IN0
+l4r => and8.IN0
+l5r => and10.IN0
+l6r => and12.IN0
+l0n => and1.IN0
+l1n => and3.IN0
+l2n => and5.IN0
+l3n => and7.IN0
+l4n => and9.IN0
+l5n => and11.IN0
+l6n => and13.IN0
+selector => and0.IN1
+selector => and2.IN1
+selector => and4.IN1
+selector => and6.IN1
+selector => and8.IN1
+selector => and10.IN1
+selector => and12.IN1
+selector => and1.IN1
+selector => and3.IN1
+selector => and5.IN1
+selector => and7.IN1
+selector => and9.IN1
+selector => and11.IN1
+selector => and13.IN1
+
+
+|system|cronometro:timer
+d0 <= binaryToDigit:btd.d0
+d1 <= binaryToDigit:btd.d1
+d2 <= binaryToDigit:btd.d2
+d3 <= binaryToDigit:btd.d3
+clk_counter => clk_counter.IN1
+clk_mux => clk_mux.IN2
+us => us.IN1
+alin => alin.IN1
+a <= decoder7segDigit:d7s.a
+b <= decoder7segDigit:d7s.b
+c <= decoder7segDigit:d7s.c
+d <= decoder7segDigit:d7s.d
+e <= decoder7segDigit:d7s.e
+f <= decoder7segDigit:d7s.f
+g <= decoder7segDigit:d7s.g
+
+
+|system|cronometro:timer|binaryToDigit:btd
+d0 <= and1.DB_MAX_OUTPUT_PORT_TYPE
+d1 <= and2.DB_MAX_OUTPUT_PORT_TYPE
+d2 <= and3.DB_MAX_OUTPUT_PORT_TYPE
+d3 <= and4.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN1
+
+
+|system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc
+clk => clk.IN1
+A <= dFlipFlop:F1.q
+B <= dFlipFlop:F0.q
+
+
+|system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndSec:UndS
+A <= tFlipFlop:F3.Q
+B <= tFlipFlop:F2.Q
+C <= tFlipFlop:F1.Q
+D <= tFlipFlop:F0.Q
+clk => and0.IN0
+clk_out <= and3.DB_MAX_OUTPUT_PORT_TYPE
+Us => and0.IN1
+alin => ~NO_FANOUT~
+
+
+|system|cronometro:timer|UndSec:UndS|tFlipFlop:F0
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndSec:UndS|tFlipFlop:F1
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndSec:UndS|tFlipFlop:F2
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndSec:UndS|tFlipFlop:F3
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|DzSec:DzS
+A <= <VCC>
+B <= tFlipFlop:F2.Q
+C <= tFlipFlop:F1.Q
+D <= tFlipFlop:F0.Q
+clk => clk.IN3
+clk_out <= and2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|DzSec:DzS|tFlipFlop:F0
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|DzSec:DzS|tFlipFlop:F1
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|DzSec:DzS|tFlipFlop:F2
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndMin:UndM
+A <= tFlipFlop:F3.Q
+B <= tFlipFlop:F2.Q
+C <= tFlipFlop:F1.Q
+D <= tFlipFlop:F0.Q
+clk => clk.IN4
+clk_out <= and3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndMin:UndM|tFlipFlop:F0
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndMin:UndM|tFlipFlop:F1
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndMin:UndM|tFlipFlop:F2
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|UndMin:UndM|tFlipFlop:F3
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|DzMin:DzM
+A <= <VCC>
+B <= <VCC>
+C <= tFlipFlop:F1.Q
+D <= tFlipFlop:F0.Q
+clk => clk.IN2
+
+
+|system|cronometro:timer|DzMin:DzM|tFlipFlop:F0
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|DzMin:DzM|tFlipFlop:F1
+clear => Q.OUTPUTSELECT
+CLK => Q~reg0.CLK
+T => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|muxCountCronometro:MCC
+clk => clk.IN1
+A0 => and0.IN1
+B0 => and4.IN1
+C0 => and8.IN1
+D0 => and12.IN1
+A1 => and1.IN1
+B1 => and5.IN1
+C1 => and9.IN1
+D1 => and13.IN1
+A2 => and2.IN1
+B2 => and6.IN1
+C2 => and10.IN1
+D2 => and14.IN1
+A3 => and3.IN1
+B3 => and7.IN1
+C3 => and11.IN1
+D3 => and15.IN1
+A <= or0.DB_MAX_OUTPUT_PORT_TYPE
+B <= or1.DB_MAX_OUTPUT_PORT_TYPE
+C <= or2.DB_MAX_OUTPUT_PORT_TYPE
+D <= or3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc
+clk => clk.IN1
+A <= dFlipFlop:F1.q
+B <= dFlipFlop:F0.q
+
+
+|system|cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|cronometro:timer|decoder7segDigit:d7s
+A => and0.IN0
+A => and7.IN0
+A => and10.IN0
+B => and1.IN0
+B => and2.IN0
+B => and3.IN0
+B => and5.IN0
+B => and6.IN0
+B => and0.IN1
+B => and4.IN0
+B => and7.IN1
+B => and8.IN0
+B => and10.IN1
+C => and3.IN1
+C => and4.IN1
+C => and5.IN1
+C => and8.IN1
+C => and9.IN0
+C => and0.IN2
+C => and1.IN1
+C => and2.IN1
+C => and6.IN1
+C => and10.IN2
+D => and0.IN3
+D => and2.IN2
+D => and5.IN2
+D => or3.IN1
+D => and7.IN2
+D => and9.IN1
+D => and1.IN2
+D => and3.IN2
+D => and4.IN2
+a <= or0.DB_MAX_OUTPUT_PORT_TYPE
+b <= or1.DB_MAX_OUTPUT_PORT_TYPE
+c <= and4.DB_MAX_OUTPUT_PORT_TYPE
+d <= or2.DB_MAX_OUTPUT_PORT_TYPE
+e <= or3.DB_MAX_OUTPUT_PORT_TYPE
+f <= or4.DB_MAX_OUTPUT_PORT_TYPE
+g <= and10.DB_MAX_OUTPUT_PORT_TYPE
+
+

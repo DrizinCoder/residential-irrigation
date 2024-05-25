@@ -1,0 +1,16 @@
+// Declaração do modulo
+module ValvulaEntrada(h, l, al, ve);
+
+	// Declaração de portas
+	input h, l, al;
+	output ve;
+	
+	// Declaração de fios intermediários
+	wire w1, w2;
+	
+	// Lógica do Circuito
+	nor nor0 (w1, al, h);
+	xor (w2, al, l);
+	or (ve, w1, w2);
+	
+endmodule

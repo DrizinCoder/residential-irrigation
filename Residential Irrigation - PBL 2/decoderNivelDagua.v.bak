@@ -1,0 +1,26 @@
+// Declaraçao do modulo
+
+module decoderNivelDagua(h, m, l, a, b, c, d, e, f, g);
+
+	// Declaraçao das portas
+	input h, m, l;
+	output a, b, c, d, e, f, g;
+	
+	// Declaraçao de fios intermediarios
+	wire w1, w2, w3, w4, w5, w6; 
+	
+	// Logica do circuito
+	not not0 (w1, h);
+	not not1 (w2, m);
+	and and0 (a, w1, l);
+	and and1 (w3, h, w2);
+	and and2 (w4, w1, w2, l);
+	or or0 (b, w3, w4, m); 
+	or or1 (c, w3, w4, m);
+	and and3 (w5, w1, l);
+	and and4 (w6, h, m ,l);
+	or or2 (e, w5, w6);
+	or or3 (f, w, w6);
+	and and5 (g, w1, w2);
+	
+endmodule

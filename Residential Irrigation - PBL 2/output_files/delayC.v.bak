@@ -1,0 +1,281 @@
+module delayC (clk, Q_out);
+
+	input clk;
+	output Q_out;
+
+	wire Q_F0, Q_F1, Q_F2, Q_F3, Q_F4, Q_F5, Q_F6, Q_F7, Q_F8, Q_F9, Q_F10, Q_F11, Q_F12, Q_F13, Q_F14, Q_F15, Q_F16;
+	wire Q_F17, Q_F18, Q_F19, Q_F20, Q_F21, Q_F22, Q_F23, Q_F24, Q_F25, Q_F26, QF25, and0Wire;
+
+	dFlipFlop F0(
+
+	.d(Q_F0),
+	.rstn(0),
+	.clk(clk),
+	.q(),
+	.q_(Q_F0),
+
+	);
+
+	dFlipFlop F1(
+
+	.d(Q_F1),
+	.rstn(0),
+	.clk(Q_F0),
+	.q(),
+	.q_(Q_F1),
+
+	);
+
+	dFlipFlop F2(
+
+	.d(Q_F2),
+	.rstn(0),
+	.clk(Q_F1),
+	.q(),
+	.q_(Q_F2),
+
+	);
+
+	dFlipFlop F3(
+
+	.d(Q_F3),
+	.rstn(0),
+	.clk(Q_F2),
+	.q(),
+	.q_(Q_F3),
+
+	);
+
+	dFlipFlop F4(
+
+	.d(Q_F4),
+	.rstn(0),
+	.clk(Q_F3),
+	.q(),
+	.q_(Q_F4),
+
+	);
+
+	dFlipFlop F5(
+
+	.d(Q_F5),
+	.rstn(0),
+	.clk(Q_F4),
+	.q(),
+	.q_(Q_F5),
+
+	);
+
+	dFlipFlop F6(
+
+	.d(Q_F6),
+	.rstn(0),
+	.clk(Q_F5),
+	.q(),
+	.q_(Q_F6),
+
+	);
+
+	dFlipFlop F7(
+
+	.d(Q_F7),
+	.rstn(0),
+	.clk(Q_F6),
+	.q(),
+	.q_(Q_F7),
+
+	);
+
+	dFlipFlop F8(
+
+	.d(Q_F8),
+	.rstn(0),
+	.clk(Q_F7),
+	.q(),
+	.q_(Q_F8),
+
+	);
+
+	dFlipFlop F9(
+
+	.d(Q_F9),
+	.rstn(0),
+	.clk(Q_F8),
+	.q(),
+	.q_(Q_F9),
+
+	);
+
+	dFlipFlop F10(
+
+	.d(Q_F10),
+	.rstn(0),
+	.clk(Q_F9),
+	.q(),
+	.q_(Q_F10),
+
+	);
+
+	dFlipFlop F11(
+
+	.d(Q_F11),
+	.rstn(0),
+	.clk(Q_F10),
+	.q(),
+	.q_(Q_F11),
+
+	);
+
+	dFlipFlop F12(
+
+	.d(Q_F12),
+	.rstn(0),
+	.clk(Q_F11),
+	.q(),
+	.q_(Q_F12),
+
+	);
+
+	dFlipFlop F13(
+
+	.d(Q_F13),
+	.rstn(0),
+	.clk(Q_F12),
+	.q(),
+	.q_(Q_F13),
+
+	);
+
+	dFlipFlop F14(
+
+	.d(Q_F14),
+	.rstn(0),
+	.clk(Q_F13),
+	.q(),
+	.q_(Q_F14),
+
+	);
+
+	dFlipFlop F15(
+
+	.d(Q_F15),
+	.rstn(0),
+	.clk(Q_F14),
+	.q(),
+	.q_(Q_F15),
+
+	);
+	
+	dFlipFlop F16(
+
+	.d(Q_F16),
+	.rstn(0),
+	.clk(Q_F15),
+	.q(),
+	.q_(Q_F16),
+
+	);
+	
+	dFlipFlop F17(
+
+	.d(Q_F17),
+	.rstn(0),
+	.clk(Q_F16),
+	.q(),
+	.q_(Q_F17),
+
+	);
+	
+	dFlipFlop F18(
+
+	.d(Q_F18),
+	.rstn(0),
+	.clk(Q_F17),
+	.q(),
+	.q_(Q_F18),
+
+	);
+	
+	dFlipFlop F19(
+
+	.d(Q_F19),
+	.rstn(0),
+	.clk(Q_F18),
+	.q(),
+	.q_(Q_F19),
+
+	);
+	
+	dFlipFlop F20(
+
+	.d(Q_F20),
+	.rstn(0),
+	.clk(Q_F19),
+	.q(),
+	.q_(Q_F20),
+
+	);
+	
+	dFlipFlop F21(
+
+	.d(Q_F21),
+	.rstn(0),
+	.clk(Q_F20),
+	.q(),
+	.q_(Q_F21),
+
+	);
+	
+	dFlipFlop F22(
+
+	.d(Q_F22),
+	.rstn(0),
+	.clk(Q_F21),
+	.q(),
+	.q_(Q_F22),
+
+	);
+	
+	dFlipFlop F23(
+
+	.d(Q_F23),
+	.rstn(0),
+	.clk(Q_F22),
+	.q(),
+	.q_(Q_F23),
+
+	);
+	
+	dFlipFlop F24(
+
+	.d(Q_F24),
+	.rstn(0),
+	.clk(Q_F23),
+	.q(),
+	.q_(Q_F24),
+
+	);
+	
+	dFlipFlop F25(
+
+	.d(and0Wire),
+	.rstn(0),
+	.clk(Q_F24),
+	.q(QF25),
+	.q_(Q_F25),
+
+	);
+	
+	dFlipFlop F26(
+
+	.d(QF25),
+	.rstn(0),
+	.clk(QF25),
+	.q(QF25),
+	.q_(Q_F26),
+
+	);
+	
+	and and0 (and0Wire, Q_F25, Q_F26);
+	
+endmodule

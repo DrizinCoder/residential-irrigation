@@ -1,0 +1,14 @@
+// Declaração do módulo
+module gotejamento (us, ua, t, m, alin, gotejamento);
+
+	// Declaração das portas
+	input us, ua, t, m;
+	output [7:0] gotejamento;
+	
+	// Declaração dos fios intermediários
+	
+	
+	// Lógica do circuito
+	
+	
+endmodule;

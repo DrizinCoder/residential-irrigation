@@ -1,0 +1,39 @@
+module DzSec ();
+	
+	// Declaração de entradas e saídas
+	
+	// Declaração de fio intermediários
+	
+	// Lógica do contador da Dezenas de segundos
+	
+	tFlipFlop F0(
+
+	.T(1),
+	.clear(),
+	.CLK(),
+	.Q(C),
+	.Q_(),
+
+	);
+	
+	tFlipFlop F1(
+
+	.T(),
+	.clear(),
+	.CLK(),
+	.Q(B),
+	.Q_(),
+
+	);
+	
+	tFlipFlop F2(
+
+	.T(),
+	.clear(),
+	.CLK(),
+	.Q(A),
+	.Q_(),
+
+	);
+	
+endmodule

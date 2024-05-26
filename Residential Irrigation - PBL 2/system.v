@@ -7,7 +7,7 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0
 	inout C0, C1, C2, C3, C4, d0, d1, d2, d3;
 	
 	// Fios intermediarios entre módulos
-	wire gotejamentoWire, aspersaoWire, clk_delay, clk_delay1sec;
+	wire gotejamentoWire, aspersaoWire, clk_delay, clk_delay1sec, pulseWire;
 	wire l0RegaMultiplex, l1RegaMultiplex, l2RegaMultiplex, l3RegaMultiplex, l4RegaMultiplex, l5RegaMultiplex, l6RegaMultiplex;
 	wire l0NivelMultiplex, l1NivelMultiplex, l2NivelMultiplex, l3NivelMultiplex, l4NivelMultiplex, l5NivelMultiplex, l6NivelMultiplex;
 	wire C0Wire, C1Wire, C2Wire, C3Wire, C4Wire;
@@ -155,7 +155,19 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0
 		.d(d),
 		.e(e),
 		.f(f),
-		.g(g)
+		.g(g),
+		.pulse(pulseWire)
+	);
+	
+	// instanciação do Level to Pulse
+	LevelToPulse LTP(
+		.h(h),
+		.m(m),
+		.l(l),
+		.As(aspersaoWire),
+		.Gt(gotejamentoWire),
+		.clk(clk),
+		.pulse(pulseWire)
 	);
 	
 

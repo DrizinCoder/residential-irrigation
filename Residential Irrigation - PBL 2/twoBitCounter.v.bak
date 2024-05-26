@@ -1,0 +1,34 @@
+module twoBitCounter ();
+
+	input clk;
+	output Q_out;
+	
+	wire Q_F0, clk_delay;
+	
+	delay dl(
+	
+	.clk(clk),
+	.Q_out(clk_delay),
+
+);
+	
+	dFlipFlop F0(
+
+	.d(Q_F0),
+	.rstn(),
+	.clk(clk_delay),
+	.q(B),
+	.q_(Q_F0),
+
+);
+
+	dFlipFlop F1(
+
+	.d(Q_out),
+	.rstn(),
+	.clk(Q_F0),
+	.q(A),
+	.q_(Q_out),
+
+);
+endmodule

@@ -1,0 +1,42 @@
+// Instanciação do módulo
+module multiplexador(a, b, c, d, e, f, g, h, selector, mModoRega, mNivelDagua);
+
+	// Declaração de portas 
+	input selector, mModoRega, mNivelDagua;
+	output a, b, c, d, e, f, g, h;
+	
+	// Declaração de fios intermediários
+	wire w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15;
+	
+	// Logica do circuito
+	not not0 (w15, selector);
+	
+	and and0 (w1, mNivelDagua, selector);
+	and and1 (w2, mModoRega, w15);
+	or or0 (a, w1, w2);
+	
+	and and2 (w3, mNivelDagua, selector);
+	and and3 (w4, mModoRega, w15);
+	or or1 (b, w1, w2);
+	
+	and and4 (w5, mNivelDagua, selector);
+	and and5 (w6, mModoRega, w15);
+	or or2 (c, w1, w2);
+	
+	and and6 (w7, mNivelDagua, selector);
+	and and7 (w8, mModoRega, w15);
+	or or3 (d, w1, w2);
+	
+	and and8 (w9, mNivelDagua, selector);
+	and and9 (w10, mModoRega, w15);
+	or or4 (e, w1, w2);
+	
+	and and10 (w11, mNivelDagua, selector);
+	and and11 (w12, mModoRega, w15);
+	or or5 (f, w1, w2); 
+	
+	and and12 (w13, mNivelDagua, selector);
+	and and13 (w14, mModoRega, w15);
+	or or6 (g, w1, w2);
+	
+endmodule

@@ -1,0 +1,715 @@
+Analysis & Synthesis report for REGUAAUTOMATIZADA
+Sat May 25 12:09:48 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "cronometro:timer|DzMin:DzM|tFlipFlop:F1"
+ 12. Port Connectivity Checks: "cronometro:timer|DzMin:DzM|tFlipFlop:F0"
+ 13. Port Connectivity Checks: "cronometro:timer|UndMin:UndM|tFlipFlop:F3"
+ 14. Port Connectivity Checks: "cronometro:timer|UndMin:UndM|tFlipFlop:F0"
+ 15. Port Connectivity Checks: "cronometro:timer|DzSec:DzS|tFlipFlop:F2"
+ 16. Port Connectivity Checks: "cronometro:timer|DzSec:DzS|tFlipFlop:F0"
+ 17. Port Connectivity Checks: "cronometro:timer|UndSec:UndS|tFlipFlop:F3"
+ 18. Port Connectivity Checks: "cronometro:timer|UndSec:UndS|tFlipFlop:F0"
+ 19. Port Connectivity Checks: "cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F1"
+ 20. Port Connectivity Checks: "cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0"
+ 21. Port Connectivity Checks: "delayC:dlc|dFlipFlop:F1"
+ 22. Port Connectivity Checks: "delayC:dlc|dFlipFlop:F0"
+ 23. Port Connectivity Checks: "delay:dl|dFlipFlop:F8"
+ 24. Port Connectivity Checks: "delay:dl|dFlipFlop:F7"
+ 25. Port Connectivity Checks: "delay:dl|dFlipFlop:F6"
+ 26. Port Connectivity Checks: "delay:dl|dFlipFlop:F5"
+ 27. Port Connectivity Checks: "delay:dl|dFlipFlop:F4"
+ 28. Port Connectivity Checks: "delay:dl|dFlipFlop:F3"
+ 29. Port Connectivity Checks: "delay:dl|dFlipFlop:F2"
+ 30. Port Connectivity Checks: "delay:dl|dFlipFlop:F1"
+ 31. Port Connectivity Checks: "delay:dl|dFlipFlop:F0"
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat May 25 12:09:48 2024       ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; REGUAAUTOMATIZADA                           ;
+; Top-level Entity Name       ; system                                      ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 82                                          ;
+; Total pins                  ; 33                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; system             ; REGUAAUTOMATIZADA  ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; On                 ; Off                ;
+; Restructure Multiplexers                                         ; On                 ; Auto               ;
+; Remove Redundant Logic Cells                                     ; On                 ; Off                ;
+; Optimization Technique                                           ; Area               ; Balanced           ;
+; Perform WYSIWYG Primitive Resynthesis                            ; On                 ; Off                ;
+; Auto Shift Register Replacement                                  ; Always             ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Always             ; Auto               ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; alarm.v                          ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/alarm.v                         ;         ;
+; system.v                         ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v                        ;         ;
+; ValvulaEntrada.v                 ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/ValvulaEntrada.v                ;         ;
+; gotejamento.v                    ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/gotejamento.v                   ;         ;
+; aspersao.v                       ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/aspersao.v                      ;         ;
+; decoderIrrigacao.v               ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/decoderIrrigacao.v              ;         ;
+; decoderNivelDagua.v              ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/decoderNivelDagua.v             ;         ;
+; multiplexador.v                  ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/multiplexador.v                 ;         ;
+; output_files/delay.v             ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v            ;         ;
+; output_files/dFlipFlop.v         ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/dFlipFlop.v        ;         ;
+; output_files/decoderColuna.v     ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoderColuna.v    ;         ;
+; output_files/tFlipFlop.v         ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/tFlipFlop.v        ;         ;
+; output_files/delayC.v            ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delayC.v           ;         ;
+; output_files/decoder7segDigit.v  ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoder7segDigit.v ;         ;
+; UndSec.v                         ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v                        ;         ;
+; DzSec.v                          ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzSec.v                         ;         ;
+; UndMin.v                         ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndMin.v                        ;         ;
+; DzMin.v                          ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzMin.v                         ;         ;
+; cronometro.v                     ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v                    ;         ;
+; muxCountCronometro.v             ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v            ;         ;
+; twoBitCounter.v                  ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/twoBitCounter.v                 ;         ;
+; binaryToDigit.v                  ; yes             ; User Verilog HDL File  ; C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/binaryToDigit.v                 ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                   ;
++---------------------------------------------+---------------------------------+
+; Resource                                    ; Usage                           ;
++---------------------------------------------+---------------------------------+
+; Total logic elements                        ; 82                              ;
+;     -- Combinational with no register       ; 53                              ;
+;     -- Register only                        ; 0                               ;
+;     -- Combinational with a register        ; 29                              ;
+;                                             ;                                 ;
+; Logic element usage by number of LUT inputs ;                                 ;
+;     -- 4 input functions                    ; 31                              ;
+;     -- 3 input functions                    ; 20                              ;
+;     -- 2 input functions                    ; 11                              ;
+;     -- 1 input functions                    ; 20                              ;
+;     -- 0 input functions                    ; 0                               ;
+;                                             ;                                 ;
+; Logic elements by mode                      ;                                 ;
+;     -- normal mode                          ; 82                              ;
+;     -- arithmetic mode                      ; 0                               ;
+;     -- qfbk mode                            ; 0                               ;
+;     -- register cascade mode                ; 0                               ;
+;     -- synchronous clear/load mode          ; 0                               ;
+;     -- asynchronous clear/load mode         ; 3                               ;
+;                                             ;                                 ;
+; Total registers                             ; 29                              ;
+; I/O pins                                    ; 33                              ;
+; Maximum fan-out node                        ; decoderColuna:dC|dFlipFlop:F2|q ;
+; Maximum fan-out                             ; 12                              ;
+; Total fan-out                               ; 283                             ;
+; Average fan-out                             ; 2.46                            ;
++---------------------------------------------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                      ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node     ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                            ; Entity Name        ; Library Name ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+--------------------+--------------+
+; |system                        ; 82 (0)      ; 29           ; 0          ; 33   ; 0            ; 53 (0)       ; 0 (0)             ; 29 (0)           ; 0 (0)           ; 0 (0)      ; |system                                                                        ; system             ; work         ;
+;    |ValvulaEntrada:ve|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |system|ValvulaEntrada:ve                                                      ; ValvulaEntrada     ; work         ;
+;    |alarm:alarm|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |system|alarm:alarm                                                            ; alarm              ; work         ;
+;    |cronometro:timer|          ; 38 (0)      ; 17           ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 17 (0)           ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer                                                       ; cronometro         ; work         ;
+;       |DzMin:DzM|              ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzMin:DzM                                             ; DzMin              ; work         ;
+;          |tFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzMin:DzM|tFlipFlop:F0                                ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzMin:DzM|tFlipFlop:F1                                ; tFlipFlop          ; work         ;
+;       |DzSec:DzS|              ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzSec:DzS                                             ; DzSec              ; work         ;
+;          |tFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzSec:DzS|tFlipFlop:F0                                ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzSec:DzS|tFlipFlop:F1                                ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|DzSec:DzS|tFlipFlop:F2                                ; tFlipFlop          ; work         ;
+;       |UndMin:UndM|            ; 5 (1)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndMin:UndM                                           ; UndMin             ; work         ;
+;          |tFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndMin:UndM|tFlipFlop:F0                              ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndMin:UndM|tFlipFlop:F1                              ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndMin:UndM|tFlipFlop:F2                              ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F3|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndMin:UndM|tFlipFlop:F3                              ; tFlipFlop          ; work         ;
+;       |UndSec:UndS|            ; 5 (1)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndSec:UndS                                           ; UndSec             ; work         ;
+;          |tFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndSec:UndS|tFlipFlop:F0                              ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndSec:UndS|tFlipFlop:F1                              ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndSec:UndS|tFlipFlop:F2                              ; tFlipFlop          ; work         ;
+;          |tFlipFlop:F3|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|UndSec:UndS|tFlipFlop:F3                              ; tFlipFlop          ; work         ;
+;       |binaryToDigit:btd|      ; 6 (4)       ; 2            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|binaryToDigit:btd                                     ; binaryToDigit      ; work         ;
+;          |twoBitCounter:tbc|   ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc                   ; twoBitCounter      ; work         ;
+;             |dFlipFlop:F0|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0      ; dFlipFlop          ; work         ;
+;             |dFlipFlop:F1|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F1      ; dFlipFlop          ; work         ;
+;       |decoder7segDigit:d7s|   ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|decoder7segDigit:d7s                                  ; decoder7segDigit   ; work         ;
+;       |muxCountCronometro:MCC| ; 8 (6)       ; 2            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|muxCountCronometro:MCC                                ; muxCountCronometro ; work         ;
+;          |twoBitCounter:tbc|   ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc              ; twoBitCounter      ; work         ;
+;             |dFlipFlop:F0|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F0 ; dFlipFlop          ; work         ;
+;             |dFlipFlop:F1|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F1 ; dFlipFlop          ; work         ;
+;    |decoderColuna:dC|          ; 10 (7)      ; 3            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |system|decoderColuna:dC                                                       ; decoderColuna      ; work         ;
+;       |dFlipFlop:F0|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|decoderColuna:dC|dFlipFlop:F0                                          ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|decoderColuna:dC|dFlipFlop:F1                                          ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F2|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|decoderColuna:dC|dFlipFlop:F2                                          ; dFlipFlop          ; work         ;
+;    |decoderIrrigacao:di|       ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |system|decoderIrrigacao:di                                                    ; decoderIrrigacao   ; work         ;
+;    |decoderNivelDagua:dnd|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |system|decoderNivelDagua:dnd                                                  ; decoderNivelDagua  ; work         ;
+;    |delay:dl|                  ; 9 (0)       ; 9            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 9 (0)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl                                                               ; delay              ; work         ;
+;       |dFlipFlop:F0|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F0                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F1                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F2|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F2                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F3|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F3                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F4|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F4                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F5|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F5                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F6|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F6                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F7|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F7                                                  ; dFlipFlop          ; work         ;
+;       |dFlipFlop:F8|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |system|delay:dl|dFlipFlop:F8                                                  ; dFlipFlop          ; work         ;
+;    |multiplexador:mux|         ; 19 (19)     ; 0            ; 0          ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |system|multiplexador:mux                                                      ; multiplexador      ; work         ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                           ;
++---------------------------------------+--------------------------------------+
+; Register name                         ; Reason for Removal                   ;
++---------------------------------------+--------------------------------------+
+; delayC:dlc|dFlipFlop:F0|q             ; Stuck at GND due to stuck port clock ;
+; delayC:dlc|dFlipFlop:F1|q             ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 2 ;                                      ;
++---------------------------------------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                  ;
++---------------------------+-------------------------+----------------------------------------+
+; Register name             ; Reason for Removal      ; Registers Removed due to This Register ;
++---------------------------+-------------------------+----------------------------------------+
+; delayC:dlc|dFlipFlop:F0|q ; Stuck at GND            ; delayC:dlc|dFlipFlop:F1|q              ;
+;                           ; due to stuck port clock ;                                        ;
++---------------------------+-------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 29    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|DzMin:DzM|tFlipFlop:F1"                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; clear ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; Q_    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|DzMin:DzM|tFlipFlop:F0"                                                                                                                                           ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; T     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; T[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; clear ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|UndMin:UndM|tFlipFlop:F3" ;
++-------+-------+----------+--------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                    ;
++-------+-------+----------+--------------------------------------------+
+; clear ; Input ; Info     ; Explicitly unconnected                     ;
++-------+-------+----------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|UndMin:UndM|tFlipFlop:F0"                                                                                                                                         ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; T     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; T[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; clear ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|DzSec:DzS|tFlipFlop:F2"                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; clear ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; Q_    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|DzSec:DzS|tFlipFlop:F0"                                                                                                                                           ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; T     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; T[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; clear ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|UndSec:UndS|tFlipFlop:F3" ;
++-------+-------+----------+--------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                    ;
++-------+-------+----------+--------------------------------------------+
+; clear ; Input ; Info     ; Explicitly unconnected                     ;
++-------+-------+----------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|UndSec:UndS|tFlipFlop:F0"                                                                                                                                         ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; T     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; T[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; clear ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F1" ;
++------+-------+----------+---------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                             ;
++------+-------+----------+---------------------------------------------------------------------+
+; rstn ; Input ; Info     ; Explicitly unconnected                                              ;
++------+-------+----------+---------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0" ;
++------+-------+----------+---------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                             ;
++------+-------+----------+---------------------------------------------------------------------+
+; rstn ; Input ; Info     ; Explicitly unconnected                                              ;
++------+-------+----------+---------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delayC:dlc|dFlipFlop:F1"                                                                                                                                                               ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delayC:dlc|dFlipFlop:F0"                                                                                                                                                               ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F8"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F7"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F6"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F5"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F4"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F3"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F2"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F1"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "delay:dl|dFlipFlop:F0"                                                                                                                                                                 ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; q        ; Output ; Info     ; Explicitly unconnected                                                                                                                                                             ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sat May 25 12:09:43 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off REGUAAUTOMATIZADA -c REGUAAUTOMATIZADA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file alarm.v
+    Info (12023): Found entity 1: alarm File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/alarm.v Line: 2
+Warning (10275): Verilog HDL Module Instantiation warning at system.v(56): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 56
+Warning (10275): Verilog HDL Module Instantiation warning at system.v(64): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file system.v
+    Info (12023): Found entity 1: system File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file valvulaentrada.v
+    Info (12023): Found entity 1: ValvulaEntrada File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/ValvulaEntrada.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file gotejamento.v
+    Info (12023): Found entity 1: gotejamento File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/gotejamento.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file aspersao.v
+    Info (12023): Found entity 1: aspersao File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/aspersao.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file decoderirrigacao.v
+    Info (12023): Found entity 1: decoderIrrigacao File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/decoderIrrigacao.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file decoderniveldagua.v
+    Info (12023): Found entity 1: decoderNivelDagua File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/decoderNivelDagua.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at multiplexador.v(22): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/multiplexador.v Line: 22
+Warning (10275): Verilog HDL Module Instantiation warning at multiplexador.v(27): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/multiplexador.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexador.v
+    Info (12023): Found entity 1: multiplexador File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/multiplexador.v Line: 2
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(16): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 16
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(26): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 26
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(36): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 36
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(46): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 46
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(56): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 56
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(66): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 66
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(76): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 76
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(86): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 86
+Warning (10275): Verilog HDL Module Instantiation warning at delay.v(96): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 96
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/delay.v
+    Info (12023): Found entity 1: delay File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/dflipflop.v
+    Info (12023): Found entity 1: dFlipFlop File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/dFlipFlop.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at decoderColuna.v(31): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoderColuna.v Line: 31
+Warning (10275): Verilog HDL Module Instantiation warning at decoderColuna.v(41): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoderColuna.v Line: 41
+Warning (10275): Verilog HDL Module Instantiation warning at decoderColuna.v(51): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoderColuna.v Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/decodercoluna.v
+    Info (12023): Found entity 1: decoderColuna File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoderColuna.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/tflipflop.v
+    Info (12023): Found entity 1: tFlipFlop File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/tFlipFlop.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at delayC.v(16): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delayC.v Line: 16
+Warning (10275): Verilog HDL Module Instantiation warning at delayC.v(26): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delayC.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/delayc.v
+    Info (12023): Found entity 1: delayC File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delayC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/decoder7segdigit.v
+    Info (12023): Found entity 1: decoder7segDigit File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoder7segDigit.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at UndSec.v(25): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 25
+Warning (10275): Verilog HDL Module Instantiation warning at UndSec.v(35): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 35
+Warning (10275): Verilog HDL Module Instantiation warning at UndSec.v(47): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 47
+Warning (10275): Verilog HDL Module Instantiation warning at UndSec.v(59): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 59
+Info (12021): Found 1 design units, including 1 entities, in source file undsec.v
+    Info (12023): Found entity 1: UndSec File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at DzSec.v(22): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzSec.v Line: 22
+Warning (10275): Verilog HDL Module Instantiation warning at DzSec.v(32): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzSec.v Line: 32
+Warning (10275): Verilog HDL Module Instantiation warning at DzSec.v(44): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzSec.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file dzsec.v
+    Info (12023): Found entity 1: DzSec File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzSec.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at UndMin.v(20): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndMin.v Line: 20
+Warning (10275): Verilog HDL Module Instantiation warning at UndMin.v(30): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndMin.v Line: 30
+Warning (10275): Verilog HDL Module Instantiation warning at UndMin.v(42): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndMin.v Line: 42
+Warning (10275): Verilog HDL Module Instantiation warning at UndMin.v(54): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndMin.v Line: 54
+Info (12021): Found 1 design units, including 1 entities, in source file undmin.v
+    Info (12023): Found entity 1: UndMin File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndMin.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at DzMin.v(23): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzMin.v Line: 23
+Warning (10275): Verilog HDL Module Instantiation warning at DzMin.v(33): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzMin.v Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file dzmin.v
+    Info (12023): Found entity 1: DzMin File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzMin.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at cronometro.v(46): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 46
+Warning (10275): Verilog HDL Module Instantiation warning at cronometro.v(57): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 57
+Info (12021): Found 1 design units, including 1 entities, in source file cronometro.v
+    Info (12023): Found entity 1: cronometro File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file muxcountcronometro.v
+    Info (12023): Found entity 1: muxCountCronometro File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at twoBitCounter.v(16): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/twoBitCounter.v Line: 16
+Warning (10275): Verilog HDL Module Instantiation warning at twoBitCounter.v(26): ignored dangling comma in List of Port Connections File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/twoBitCounter.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file twobitcounter.v
+    Info (12023): Found entity 1: twoBitCounter File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/twoBitCounter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file binarytodigit.v
+    Info (12023): Found entity 1: binaryToDigit File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/binaryToDigit.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at decoderIrrigacao.v(41): created implicit net for "and7wire" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/decoderIrrigacao.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at decoder7segDigit.v(46): created implicit net for "and5wire" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoder7segDigit.v Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at UndSec.v(12): created implicit net for "Alin" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at DzSec.v(34): created implicit net for "and1Wire" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/DzSec.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(14): created implicit net for "a" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(15): created implicit net for "b" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(20): created implicit net for "A_bar" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(21): created implicit net for "B_bar" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(22): created implicit net for "d0" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(23): created implicit net for "d1" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(24): created implicit net for "d2" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at muxCountCronometro.v(25): created implicit net for "d3" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/muxCountCronometro.v Line: 25
+Info (12127): Elaborating entity "system" for the top level hierarchy
+Info (12128): Elaborating entity "alarm" for hierarchy "alarm:alarm" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 21
+Info (12128): Elaborating entity "ValvulaEntrada" for hierarchy "ValvulaEntrada:ve" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 30
+Info (12128): Elaborating entity "gotejamento" for hierarchy "gotejamento:gt" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 40
+Info (12128): Elaborating entity "aspersao" for hierarchy "aspersao:as" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 48
+Info (12128): Elaborating entity "delay" for hierarchy "delay:dl" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 56
+Info (12128): Elaborating entity "dFlipFlop" for hierarchy "delay:dl|dFlipFlop:F0" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/delay.v Line: 16
+Info (12128): Elaborating entity "delayC" for hierarchy "delayC:dlc" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 64
+Info (12128): Elaborating entity "decoderColuna" for hierarchy "decoderColuna:dC" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 76
+Info (12128): Elaborating entity "decoderNivelDagua" for hierarchy "decoderNivelDagua:dnd" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 95
+Info (12128): Elaborating entity "decoderIrrigacao" for hierarchy "decoderIrrigacao:di" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 113
+Info (12128): Elaborating entity "multiplexador" for hierarchy "multiplexador:mux" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 139
+Info (12128): Elaborating entity "cronometro" for hierarchy "cronometro:timer" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 159
+Info (12128): Elaborating entity "binaryToDigit" for hierarchy "cronometro:timer|binaryToDigit:btd" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 20
+Info (12128): Elaborating entity "twoBitCounter" for hierarchy "cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/binaryToDigit.v Line: 24
+Info (12128): Elaborating entity "UndSec" for hierarchy "cronometro:timer|UndSec:UndS" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 35
+Warning (10030): Net "Alin" at UndSec.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 12
+Info (12128): Elaborating entity "tFlipFlop" for hierarchy "cronometro:timer|UndSec:UndS|tFlipFlop:F0" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/UndSec.v Line: 25
+Info (12128): Elaborating entity "DzSec" for hierarchy "cronometro:timer|DzSec:DzS" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 46
+Info (12128): Elaborating entity "UndMin" for hierarchy "cronometro:timer|UndMin:UndM" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 57
+Info (12128): Elaborating entity "DzMin" for hierarchy "cronometro:timer|DzMin:DzM" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 67
+Info (12128): Elaborating entity "muxCountCronometro" for hierarchy "cronometro:timer|muxCountCronometro:MCC" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 93
+Info (12128): Elaborating entity "decoder7segDigit" for hierarchy "cronometro:timer|decoder7segDigit:d7s" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/cronometro.v Line: 108
+Warning (10030): Net "and5wire" at decoder7segDigit.v(46) has no driver or initial value, using a default initial value '0' File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/decoder7segDigit.v Line: 46
+Warning (12241): 15 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (17026): Resynthesizing 0 WYSIWYG logic cells and I/Os using "area" technology mapper which leaves 0 WYSIWYG logic cells and I/Os untouched
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "C0" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "C1" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "C2" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "C3" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "C4" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "d0" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "d1" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "d2" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "d3" and its non-tri-state driver. File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "C0" is moved to its source File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "C1" is moved to its source File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "C2" is moved to its source File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "C3" is moved to its source File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "C4" is moved to its source File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "C0~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "C1~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "C2~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "C3~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "C4~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "d0~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "d1~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "d2~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+    Warning (13010): Node "d3~synth" File: C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/system.v Line: 7
+Info (21057): Implemented 115 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21060): Implemented 9 bidirectional pins
+    Info (21061): Implemented 82 logic cells
+Info (144001): Generated suppressed messages file C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/REGUAAUTOMATIZADA.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 71 warnings
+    Info: Peak virtual memory: 4703 megabytes
+    Info: Processing ended: Sat May 25 12:09:48 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:14
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/guiau/OneDrive/햞ea de Trabalho/PBL2 V3/output_files/REGUAAUTOMATIZADA.map.smsg.
+
+

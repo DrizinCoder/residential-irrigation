@@ -1,0 +1,3 @@
+module muxCountCronometro (d1, d2, d3, d4, Aus, Bus, Cus, Dus, Aum, Bum, Cum, Dum, Adzs, Bdzs, Cdzs, Ddzs, Adzm, Bdzm, Cdzm, Ddzm, A, B, C, D);
+
+endmodule

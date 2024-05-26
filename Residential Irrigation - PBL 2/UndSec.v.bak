@@ -1,0 +1,14 @@
+module UndSec(clk, alin, Us, A, B, C, D);
+	
+	// Declaraçao de portas
+	input clk, alin, Us;
+	output A, B, C, D;
+	
+	// Declaraçao dos fio intermediarios
+	wire nor0Wire, play;
+	
+	// Logica do contador de Segundos
+	nor nor0 (nor0Wire, Us, alin);
+	and and0 (play, nor0Wire, clk);
+	
+endmodule 

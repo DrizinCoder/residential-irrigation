@@ -1,0 +1,19 @@
+// Declaração do módulo
+module alarm(H, M, L, Al);
+	
+	// Declaração das portas
+	input H, M, L;
+	output Al;
+	
+	// Declaração de fios intermediarios
+	wire w1, w2, w3, w4
+	
+	// Lógica do circuito
+	
+	or o0(w1, M, L);
+	and and0(w4, H, w1);
+	and and1(w2, H, L);
+	and and2 (w3, M, w2);
+	or o0 (al, w3, w4);
+	
+endmodule

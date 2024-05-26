@@ -1,0 +1,245 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'us'
+Slack : -1.862
+TNS   : -5.570
+
+Type  : Setup 'cronometro:timer|DzSec:DzS|tFlipFlop:F0|Q'
+Slack : -1.844
+TNS   : -5.523
+
+Type  : Setup 'cronometro:timer|UndSec:UndS|tFlipFlop:F0|Q'
+Slack : -1.827
+TNS   : -3.653
+
+Type  : Setup 'decoderColuna:dC|dFlipFlop:F1|q'
+Slack : -1.550
+TNS   : -1.550
+
+Type  : Setup 'cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F0|q'
+Slack : -1.539
+TNS   : -1.539
+
+Type  : Setup 'cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0|q'
+Slack : -1.522
+TNS   : -1.522
+
+Type  : Setup 'cronometro:timer|UndMin:UndM|tFlipFlop:F0|Q'
+Slack : -1.495
+TNS   : -2.988
+
+Type  : Setup 'delay:dl|dFlipFlop:F0|q'
+Slack : 0.209
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F3|q'
+Slack : 0.209
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F7|q'
+Slack : 0.209
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F5|q'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Setup 'decoderColuna:dC|dFlipFlop:F0|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F4|q'
+Slack : 0.818
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F1|q'
+Slack : 0.845
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F2|q'
+Slack : 1.469
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F6|q'
+Slack : 1.555
+TNS   : 0.000
+
+Type  : Setup 'clk'
+Slack : 1.907
+TNS   : 0.000
+
+Type  : Setup 'delay:dl|dFlipFlop:F8|q'
+Slack : 2.682
+TNS   : 0.000
+
+Type  : Hold 'cronometro:timer|DzSec:DzS|tFlipFlop:F0|Q'
+Slack : -4.761
+TNS   : -19.027
+
+Type  : Hold 'cronometro:timer|UndSec:UndS|tFlipFlop:F0|Q'
+Slack : -4.651
+TNS   : -13.931
+
+Type  : Hold 'us'
+Slack : -4.587
+TNS   : -17.532
+
+Type  : Hold 'delay:dl|dFlipFlop:F8|q'
+Slack : -3.107
+TNS   : -8.857
+
+Type  : Hold 'clk'
+Slack : -1.961
+TNS   : -1.961
+
+Type  : Hold 'delay:dl|dFlipFlop:F6|q'
+Slack : -1.609
+TNS   : -1.609
+
+Type  : Hold 'delay:dl|dFlipFlop:F2|q'
+Slack : -1.523
+TNS   : -1.523
+
+Type  : Hold 'delay:dl|dFlipFlop:F1|q'
+Slack : -0.899
+TNS   : -0.899
+
+Type  : Hold 'delay:dl|dFlipFlop:F4|q'
+Slack : -0.872
+TNS   : -0.872
+
+Type  : Hold 'decoderColuna:dC|dFlipFlop:F0|q'
+Slack : -0.288
+TNS   : -0.288
+
+Type  : Hold 'delay:dl|dFlipFlop:F5|q'
+Slack : -0.264
+TNS   : -0.264
+
+Type  : Hold 'delay:dl|dFlipFlop:F0|q'
+Slack : -0.263
+TNS   : -0.263
+
+Type  : Hold 'delay:dl|dFlipFlop:F3|q'
+Slack : -0.263
+TNS   : -0.263
+
+Type  : Hold 'delay:dl|dFlipFlop:F7|q'
+Slack : -0.263
+TNS   : -0.263
+
+Type  : Hold 'cronometro:timer|UndMin:UndM|tFlipFlop:F0|Q'
+Slack : 1.708
+TNS   : 0.000
+
+Type  : Hold 'cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0|q'
+Slack : 1.968
+TNS   : 0.000
+
+Type  : Hold 'cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F0|q'
+Slack : 1.985
+TNS   : 0.000
+
+Type  : Hold 'decoderColuna:dC|dFlipFlop:F1|q'
+Slack : 1.996
+TNS   : 0.000
+
+Type  : Recovery 'decoderColuna:dC|dFlipFlop:F0|q'
+Slack : -5.352
+TNS   : -5.352
+
+Type  : Recovery 'decoderColuna:dC|dFlipFlop:F1|q'
+Slack : -3.314
+TNS   : -3.314
+
+Type  : Recovery 'delay:dl|dFlipFlop:F8|q'
+Slack : -2.882
+TNS   : -2.882
+
+Type  : Removal 'delay:dl|dFlipFlop:F8|q'
+Slack : 0.734
+TNS   : 0.000
+
+Type  : Removal 'decoderColuna:dC|dFlipFlop:F1|q'
+Slack : 1.166
+TNS   : 0.000
+
+Type  : Removal 'decoderColuna:dC|dFlipFlop:F0|q'
+Slack : 3.204
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'us'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'cronometro:timer|DzSec:DzS|tFlipFlop:F0|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'cronometro:timer|UndMin:UndM|tFlipFlop:F0|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'cronometro:timer|UndSec:UndS|tFlipFlop:F0|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'cronometro:timer|muxCountCronometro:MCC|twoBitCounter:tbc|dFlipFlop:F0|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'decoderColuna:dC|dFlipFlop:F0|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'decoderColuna:dC|dFlipFlop:F1|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F0|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F1|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F2|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F3|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F4|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F5|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F6|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F7|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'delay:dl|dFlipFlop:F8|q'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

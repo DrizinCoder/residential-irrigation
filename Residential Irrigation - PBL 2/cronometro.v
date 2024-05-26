@@ -1,7 +1,7 @@
-module cronometro(d0, d1, d2, d3, clk_counter, clk_mux, us, alin, a, b, c, d, e, f, g);
+module cronometro(d0, d1, d2, d3, clk_counter, clk_mux, us, alin, a, b, c, d, e, f, g, pulse);
 
 	// Declaração de Entradas e Saídas
-	input clk_counter, clk_mux, us, alin;
+	input clk_counter, clk_mux, us, alin, pulse;
 	output d0,d1,d2,d3, a,b,c,d,e,f,g;
 	
 	// Declaração fios intermédiários
@@ -27,6 +27,7 @@ module cronometro(d0, d1, d2, d3, clk_counter, clk_mux, us, alin, a, b, c, d, e,
 	.B (B3),
 	.C (C3),
 	.D (D3),
+	.pulse (pulse),
 	.clk (clk_counter),
 	.clk_out (clk_undsec),
 	.Us (us),
@@ -40,6 +41,7 @@ module cronometro(d0, d1, d2, d3, clk_counter, clk_mux, us, alin, a, b, c, d, e,
 	.B (B2),
 	.C (C2),
 	.D (D2),
+	.pulse (pulse),
 	.clk (clk_undsec),
 	.clk_out (clk_dzsec),
 	

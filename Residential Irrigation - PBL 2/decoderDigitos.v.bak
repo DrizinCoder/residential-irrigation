@@ -1,0 +1,31 @@
+module decoderDigitos(h, m, l, As, Gt, _C_, pulse);
+	
+	// Declaraçao de entradas e saidas
+	input h, m, l, As, Gt, pulse;
+	output
+	
+	// Declaraçao de fios intermediarios
+	wire h_, m_, l_, As_, Gt_, Cbar
+	wire wireAnd0, wireAnd1, wireAnd2, wireAnd3, wireAnd4, wireAnd5, wireAnd6, wireAnd7, wireAnd8, wireAnd9, wireAnd10
+	
+	// Logica do decoder
+	not not0 (h_, h);
+	not not1 (m_, m);
+	not not2 (l_, l);
+	not not3 (As_, As);
+	not not4 (Gt_, Gt);
+	not not5 (Cbar, _C_);
+	
+	and and0 (wireAnd0, m, As_);
+	and and1 (wireAnd1, m_, As_);
+	and and2 (wireAnd2, m, Gt_);
+	and and3 (wireAnd3, m_, Gt_);
+	and and4 (wireAnd4, h_, m, As_);
+	and and5 (wireAnd5, m_, Gt_);
+	and and6 (wireAnd6, h, Gt_);
+	and and7 (wireAnd7, h_, m);
+	and and8 (wireAnd8, m_, Gt_);
+	and and9 (wireAnd9, h, Gt_);
+	and and10 (wireAnd10, h_, m);
+	
+endmodule

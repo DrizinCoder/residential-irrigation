@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM240T100) Path("/home/aluno/Documentos/regaautomatizadaV3.0/regaautomatizadaV2.4/regaautomatizadaV2.3/regaautomatizadaV2.1/PBLPRIMEIROFINAL/output_files/") File("REGUAAUTOMATIZADA.pof") MfrSpec(OpMask(1) SEC_Device(EPM240T100) Child_OpMask(2 1 1));
+		Device PartName(EPM240T100) Path("/home/aluno/Documentos/Document from Robson Carvalho (1)/residential-irrigation/Residential Irrigation - PBL 2/output_files/") File("REGUAAUTOMATIZADA.pof") MfrSpec(OpMask(1) SEC_Device(EPM240T100) Child_OpMask(2 1 1));
 
 ChainEnd;
 

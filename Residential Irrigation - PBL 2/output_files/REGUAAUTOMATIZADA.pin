@@ -58,7 +58,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 CHIP  "REGUAAUTOMATIZADA"  ASSIGNED TO AN: EPM240T100C5
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -133,12 +133,12 @@ GND*                         : 67        :        :                   :         
 d2                           : 68        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 69        :        :                   :         : 2         :                
 b                            : 70        : output : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : 71        :        :                   :         : 2         :                
+test3                        : 71        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 72        :        :                   :         : 2         :                
-GND*                         : 73        :        :                   :         : 2         :                
+test2                        : 73        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 74        :        :                   :         : 2         :                
-GND*                         : 75        :        :                   :         : 2         :                
-GND*                         : 76        :        :                   :         : 2         :                
+test1                        : 75        : output : 3.3-V LVTTL       :         : 2         : Y              
+test                         : 76        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 77        :        :                   :         : 2         :                
 C4                           : 78        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 GNDIO                        : 79        : gnd    :                   :         :           :                

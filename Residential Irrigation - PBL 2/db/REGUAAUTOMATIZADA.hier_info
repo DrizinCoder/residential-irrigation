@@ -1,7 +1,7 @@
 |system
-h => h.IN3
-m => m.IN4
-l => l.IN3
+h => h.IN5
+m => m.IN6
+l => l.IN5
 us => us.IN3
 ua => ua.IN1
 t => t.IN1
@@ -30,11 +30,15 @@ l4 << multiplexador:mux.l4
 l5 << multiplexador:mux.l5
 l6 << multiplexador:mux.l6
 selector => selector.IN1
+d0 <> binaryToDigit:btd.d0
 d0 <> cronometro:timer.d0
+d1 <> binaryToDigit:btd.d1
 d1 <> cronometro:timer.d1
+d2 <> binaryToDigit:btd.d2
 d2 <> cronometro:timer.d2
+d3 <> binaryToDigit:btd.d3
 d3 <> cronometro:timer.d3
-clk => clk.IN1
+clk => clk.IN2
 a << cronometro:timer.a
 b << cronometro:timer.b
 c << cronometro:timer.c
@@ -42,6 +46,10 @@ d << cronometro:timer.d
 e << cronometro:timer.e
 f << cronometro:timer.f
 g << cronometro:timer.g
+test << cronometro:timer.A3
+test1 << cronometro:timer.B3
+test2 << cronometro:timer.C3
+test3 << cronometro:timer.D3
 
 
 |system|alarm:alarm
@@ -158,8 +166,64 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|system|delay:dl|dFlipFlop:F9
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F10
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F11
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F12
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F13
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F14
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delay:dl|dFlipFlop:F15
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |system|delayC:dlc
-clk => ~NO_FANOUT~
+clk => clk.IN1
 Q_out <= Q_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -172,6 +236,70 @@ q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|delayC:dlc|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F3
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F4
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F5
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F6
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F7
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F8
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|delayC:dlc|dFlipFlop:F9
 d => q~reg0.DATAIN
 rstn => q~reg0.ACLR
 clk => q~reg0.CLK
@@ -316,13 +444,48 @@ selector => and11.IN1
 selector => and13.IN1
 
 
+|system|binaryToDigit:btd
+d0 <= and1.DB_MAX_OUTPUT_PORT_TYPE
+d1 <= and2.DB_MAX_OUTPUT_PORT_TYPE
+d2 <= and3.DB_MAX_OUTPUT_PORT_TYPE
+d3 <= and4.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN1
+
+
+|system|binaryToDigit:btd|twoBitCounter:tbc
+clk => clk.IN1
+A <= dFlipFlop:F1.q
+B <= dFlipFlop:F0.q
+
+
+|system|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |system|cronometro:timer
-d0 <= binaryToDigit:btd.d0
-d1 <= binaryToDigit:btd.d1
-d2 <= binaryToDigit:btd.d2
-d3 <= binaryToDigit:btd.d3
+h => h.IN1
+m => m.IN1
+l => l.IN1
+As => As.IN1
+Gt => Gt.IN1
+d0 => ~NO_FANOUT~
+d1 => ~NO_FANOUT~
+d2 => ~NO_FANOUT~
+d3 => ~NO_FANOUT~
 clk_counter => clk_counter.IN1
-clk_mux => clk_mux.IN2
+clk_mux => clk_mux.IN1
 us => us.IN1
 alin => alin.IN1
 a <= decoder7segDigit:d7s.a
@@ -332,36 +495,15 @@ d <= decoder7segDigit:d7s.d
 e <= decoder7segDigit:d7s.e
 f <= decoder7segDigit:d7s.f
 g <= decoder7segDigit:d7s.g
-
-
-|system|cronometro:timer|binaryToDigit:btd
-d0 <= and1.DB_MAX_OUTPUT_PORT_TYPE
-d1 <= and2.DB_MAX_OUTPUT_PORT_TYPE
-d2 <= and3.DB_MAX_OUTPUT_PORT_TYPE
-d3 <= and4.DB_MAX_OUTPUT_PORT_TYPE
-clk => clk.IN1
-
-
-|system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc
-clk => clk.IN1
-A <= dFlipFlop:F1.q
-B <= dFlipFlop:F0.q
-
-
-|system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F0
-d => q~reg0.DATAIN
-rstn => q~reg0.ACLR
-clk => q~reg0.CLK
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|system|cronometro:timer|binaryToDigit:btd|twoBitCounter:tbc|dFlipFlop:F1
-d => q~reg0.DATAIN
-rstn => q~reg0.ACLR
-clk => q~reg0.CLK
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pulse => pulse.IN3
+A3 <> UndSec:UndS.A
+A3 <> muxCountCronometro:MCC.A3
+B3 <> UndSec:UndS.B
+B3 <> muxCountCronometro:MCC.B3
+C3 <> UndSec:UndS.C
+C3 <> muxCountCronometro:MCC.C3
+D3 <> UndSec:UndS.D
+D3 <> muxCountCronometro:MCC.D3
 
 
 |system|cronometro:timer|UndSec:UndS
@@ -369,75 +511,91 @@ A <= tFlipFlop:F3.Q
 B <= tFlipFlop:F2.Q
 C <= tFlipFlop:F1.Q
 D <= tFlipFlop:F0.Q
-clk => and0.IN0
+pulse => pulse.IN2
+clk => and0.IN1
 clk_out <= and3.DB_MAX_OUTPUT_PORT_TYPE
-Us => and0.IN1
-alin => ~NO_FANOUT~
+Us => nor0.IN0
+alin => nor0.IN1
 
 
 |system|cronometro:timer|UndSec:UndS|tFlipFlop:F0
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndSec:UndS|tFlipFlop:F1
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndSec:UndS|tFlipFlop:F2
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndSec:UndS|tFlipFlop:F3
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|DzSec:DzS
-A <= <VCC>
+A <= <GND>
 B <= tFlipFlop:F2.Q
 C <= tFlipFlop:F1.Q
 D <= tFlipFlop:F0.Q
 clk => clk.IN3
+pulse => pulse.IN2
 clk_out <= and2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|cronometro:timer|DzSec:DzS|tFlipFlop:F0
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|DzSec:DzS|tFlipFlop:F1
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|DzSec:DzS|tFlipFlop:F2
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndMin:UndM
@@ -447,62 +605,136 @@ C <= tFlipFlop:F1.Q
 D <= tFlipFlop:F0.Q
 clk => clk.IN4
 clk_out <= and3.DB_MAX_OUTPUT_PORT_TYPE
+SETf0 => SETf0.IN1
+SETf1 => SETf1.IN1
+SETf2 => SETf2.IN1
+SETf3 => SETf3.IN1
+Clearf0 => Clearf0.IN1
+Clearf1 => or0.IN1
+Clearf2 => or1.IN1
+Clearf3 => Clearf3.IN1
 
 
 |system|cronometro:timer|UndMin:UndM|tFlipFlop:F0
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndMin:UndM|tFlipFlop:F1
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndMin:UndM|tFlipFlop:F2
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|UndMin:UndM|tFlipFlop:F3
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|DzMin:DzM
-A <= <VCC>
-B <= <VCC>
+A <= <GND>
+B <= <GND>
 C <= tFlipFlop:F1.Q
 D <= tFlipFlop:F0.Q
 clk => clk.IN2
+SETf0 => SETf0.IN1
+SETf1 => SETf1.IN1
+Clearf0 => Clearf0.IN1
+Clearf1 => Clearf1.IN1
 
 
 |system|cronometro:timer|DzMin:DzM|tFlipFlop:F0
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
 
 
 |system|cronometro:timer|DzMin:DzM|tFlipFlop:F1
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
+clear => Q.IN0
 CLK => Q~reg0.CLK
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q_ <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SET => Q.IN1
+
+
+|system|cronometro:timer|decoderDigitos:comb_3
+h => and6.IN0
+h => and9.IN0
+h => or1.IN2
+h => and4.IN0
+h => and10.IN0
+m => and0.IN0
+m => and2.IN0
+m => and4.IN1
+m => and10.IN1
+m => and1.IN0
+m => and3.IN0
+m => and5.IN0
+m => and8.IN0
+m => or0.IN0
+l => ~NO_FANOUT~
+As => and0.IN1
+As => and1.IN1
+As => and4.IN2
+As => or6.IN1
+Gt => and2.IN1
+Gt => and3.IN1
+Gt => and5.IN1
+Gt => and6.IN1
+Gt => and8.IN1
+Gt => and9.IN1
+Gt => or0.IN1
+pulse => and11.IN1
+pulse => and12.IN1
+pulse => and13.IN1
+pulse => and14.IN1
+pulse => and17.IN1
+pulse => and21.IN1
+pulse => and22.IN1
+pulse => A1Clear.DATAIN
+pulse => C1Clear.DATAIN
+A0SET <= and11.DB_MAX_OUTPUT_PORT_TYPE
+A0Clear <= and12.DB_MAX_OUTPUT_PORT_TYPE
+B0SET <= and13.DB_MAX_OUTPUT_PORT_TYPE
+B0Clear <= and14.DB_MAX_OUTPUT_PORT_TYPE
+A1SET <= <GND>
+A1Clear <= pulse.DB_MAX_OUTPUT_PORT_TYPE
+B1SET <= and17.DB_MAX_OUTPUT_PORT_TYPE
+B1Clear <= <GND>
+C1SET <= <GND>
+C1Clear <= pulse.DB_MAX_OUTPUT_PORT_TYPE
+D1SET <= and21.DB_MAX_OUTPUT_PORT_TYPE
+D1Clear <= and22.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|cronometro:timer|muxCountCronometro:MCC
@@ -591,5 +823,133 @@ d <= or2.DB_MAX_OUTPUT_PORT_TYPE
 e <= or3.DB_MAX_OUTPUT_PORT_TYPE
 f <= or4.DB_MAX_OUTPUT_PORT_TYPE
 g <= and10.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP
+h => and2.IN0
+h => and0.IN0
+h => and1.IN0
+m => and0.IN1
+m => and2.IN1
+m => and1.IN1
+l => and0.IN2
+l => and1.IN2
+l => and2.IN2
+As => As.IN1
+Gt => Gt.IN1
+clk => clk.IN14
+pulse <= or2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F3
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F4
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F5
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F6
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F7
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F8
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F9
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F10
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F11
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F12
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|system|LevelToPulse:LTP|dFlipFlop:F13
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_ <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

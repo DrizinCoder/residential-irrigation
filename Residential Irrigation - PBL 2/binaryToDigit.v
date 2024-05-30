@@ -5,15 +5,19 @@ module binaryToDigit (d0, d1, d2, d3, clk);
 	output d0, d1, d2, d3;
 	
 	// Declaraçao Fios intermediarios
-	wire Q_F0, Q_F1, A_bar, B_bar, A, B;
+	wire A_bar, B_bar, A, B, d0wire, d1wire, d2wire, d3wire;
 	
 	//Logica dos digitos
 	not not0 (A_bar, A);
 	not not1 (B_bar, B);
-	and and1 (d0, A_bar, B_bar);
-	and and2 (d1, A_bar, B);
-	and and3 (d2, A, B_bar);
-	and and4 (d3, A, B);
+	and and1 (d0wire, A_bar, B_bar);
+	and and2 (d1wire, A_bar, B);
+	and and3 (d2wire, A, B_bar);
+	and and4 (d3wire, A, B);
+	not (d0, d0wire);
+	not (d1, d1wire);
+	not (d2, d2wire);
+	not (d3, d3wire);
 	
 	twoBitCounter tbc(
 	

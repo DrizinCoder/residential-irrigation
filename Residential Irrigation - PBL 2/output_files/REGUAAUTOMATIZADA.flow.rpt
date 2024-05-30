@@ -1,6 +1,6 @@
 Flow report for REGUAAUTOMATIZADA
-Sat May 25 12:09:52 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Wed May 29 17:33:05 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Sat May 25 12:09:50 2024       ;
-; Quartus Prime Version ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Flow Status           ; Successful - Wed May 29 17:33:04 2024       ;
+; Quartus Prime Version ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name         ; REGUAAUTOMATIZADA                           ;
 ; Top-level Entity Name ; system                                      ;
 ; Family                ; MAX II                                      ;
 ; Device                ; EPM240T100C5                                ;
 ; Timing Models         ; Final                                       ;
-; Total logic elements  ; 82 / 240 ( 34 % )                           ;
-; Total pins            ; 33 / 80 ( 41 % )                            ;
+; Total logic elements  ; 129 / 240 ( 54 % )                          ;
+; Total pins            ; 37 / 80 ( 46 % )                            ;
 ; Total virtual pins    ; 0                                           ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                               ;
 +-----------------------+---------------------------------------------+
@@ -60,35 +60,35 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/25/2024 12:09:43 ;
+; Start date & time ; 05/29/2024 17:32:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; REGUAAUTOMATIZADA   ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                 ;
-+-------------------------------------------------+--------------------------------+--------------------+-------------+------------+
-; Assignment Name                                 ; Value                          ; Default Value      ; Entity Name ; Section Id ;
-+-------------------------------------------------+--------------------------------+--------------------+-------------+------------+
-; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP             ; On                             ; Off                ; --          ; --         ;
-; ALLOW_SHIFT_REGISTER_MERGING_ACROSS_HIERARCHIES ; Always                         ; Auto               ; --          ; --         ;
-; AUTO_SHIFT_REGISTER_RECOGNITION                 ; Always                         ; Auto               ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                           ; 14071519007787.171664978315332 ; --                 ; --          ; --         ;
-; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION      ; Always                         ; Automatically      ; --          ; --         ;
-; FITTER_EFFORT                                   ; Standard Fit                   ; Auto Fit           ; --          ; --         ;
-; MAXII_OPTIMIZATION_TECHNIQUE                    ; Area                           ; Balanced           ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP                          ; 85                             ; --                 ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP                          ; 0                              ; --                 ; --          ; --         ;
-; MUX_RESTRUCTURE                                 ; On                             ; Auto               ; --          ; --         ;
-; OPTIMIZE_TIMING                                 ; Off                            ; Normal compilation ; --          ; --         ;
-; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR           ; 3.3V                           ; --                 ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION                   ; No Heat Sink With Still Air    ; --                 ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY                        ; output_files                   ; --                 ; --          ; --         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS                    ; On                             ; Off                ; --          ; --         ;
-; SMART_RECOMPILE                                 ; On                             ; Off                ; --          ; --         ;
-; TOP_LEVEL_ENTITY                                ; system                         ; REGUAAUTOMATIZADA  ; --          ; --         ;
-+-------------------------------------------------+--------------------------------+--------------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                  ;
++-------------------------------------------------+---------------------------------+--------------------+-------------+------------+
+; Assignment Name                                 ; Value                           ; Default Value      ; Entity Name ; Section Id ;
++-------------------------------------------------+---------------------------------+--------------------+-------------+------------+
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP             ; On                              ; Off                ; --          ; --         ;
+; ALLOW_SHIFT_REGISTER_MERGING_ACROSS_HIERARCHIES ; Always                          ; Auto               ; --          ; --         ;
+; AUTO_SHIFT_REGISTER_RECOGNITION                 ; Always                          ; Auto               ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                           ; 159209604667056.171701477738283 ; --                 ; --          ; --         ;
+; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION      ; Always                          ; Automatically      ; --          ; --         ;
+; FITTER_EFFORT                                   ; Standard Fit                    ; Auto Fit           ; --          ; --         ;
+; MAXII_OPTIMIZATION_TECHNIQUE                    ; Area                            ; Balanced           ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP                          ; 85                              ; --                 ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP                          ; 0                               ; --                 ; --          ; --         ;
+; MUX_RESTRUCTURE                                 ; On                              ; Auto               ; --          ; --         ;
+; OPTIMIZE_TIMING                                 ; Off                             ; Normal compilation ; --          ; --         ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR           ; 3.3V                            ; --                 ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION                   ; No Heat Sink With Still Air     ; --                 ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY                        ; output_files                    ; --                 ; --          ; --         ;
+; REMOVE_REDUNDANT_LOGIC_CELLS                    ; On                              ; Off                ; --          ; --         ;
+; SMART_RECOMPILE                                 ; On                              ; Off                ; --          ; --         ;
+; TOP_LEVEL_ENTITY                                ; system                          ; REGUAAUTOMATIZADA  ; --          ; --         ;
++-------------------------------------------------+---------------------------------+--------------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -96,24 +96,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4703 MB             ; 00:00:14                           ;
-; Fitter               ; 00:00:00     ; 1.0                     ; 5592 MB             ; 00:00:01                           ;
-; Assembler            ; 00:00:00     ; 1.0                     ; 4663 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4705 MB             ; 00:00:01                           ;
-; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 341 MB              ; 00:00:12                           ;
+; Fitter               ; 00:00:00     ; 1.0                     ; 853 MB              ; 00:00:01                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 325 MB              ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:00     ; 1.0                     ; 364 MB              ; 00:00:01                           ;
+; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:14                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-OK83H6U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-OK83H6U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-OK83H6U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-OK83H6U  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; LEDS-45034       ; Ubuntu 22.04.4 ; 22         ; x86_64         ;
+; Fitter               ; LEDS-45034       ; Ubuntu 22.04.4 ; 22         ; x86_64         ;
+; Assembler            ; LEDS-45034       ; Ubuntu 22.04.4 ; 22         ; x86_64         ;
+; Timing Analyzer      ; LEDS-45034       ; Ubuntu 22.04.4 ; 22         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------

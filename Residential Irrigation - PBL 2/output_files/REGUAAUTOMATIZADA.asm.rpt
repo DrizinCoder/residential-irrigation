@@ -1,6 +1,6 @@
 Assembler report for REGUAAUTOMATIZADA
-Sat May 25 12:09:50 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Wed May 29 17:33:04 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/guiau/OneDrive/Área de Trabalho/PBL2 V3/output_files/REGUAAUTOMATIZADA.pof
+  5. Assembler Device Options: REGUAAUTOMATIZADA.pof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat May 25 12:09:50 2024 ;
+; Assembler Status      ; Successful - Wed May 29 17:33:04 2024 ;
 ; Revision Name         ; REGUAAUTOMATIZADA                     ;
 ; Top-level Entity Name ; system                                ;
 ; Family                ; MAX II                                ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                           ;
-+-------------------------------------------------------------------------------------+
-; File Name                                                                           ;
-+-------------------------------------------------------------------------------------+
-; C:/Users/guiau/OneDrive/Área de Trabalho/PBL2 V3/output_files/REGUAAUTOMATIZADA.pof ;
-+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                                         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                                         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; /home/aluno/Documentos/Document from Robson Carvalho (1)/residential-irrigation/Residential Irrigation - PBL 2/output_files/REGUAAUTOMATIZADA.pof ;
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/guiau/OneDrive/Área de Trabalho/PBL2 V3/output_files/REGUAAUTOMATIZADA.pof ;
-+----------------+----------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                      ;
-+----------------+----------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00185678                                                                                   ;
-; Checksum       ; 0x001859F8                                                                                   ;
-+----------------+----------------------------------------------------------------------------------------------+
++-------------------------------------------------+
+; Assembler Device Options: REGUAAUTOMATIZADA.pof ;
++----------------+--------------------------------+
+; Option         ; Setting                        ;
++----------------+--------------------------------+
+; JTAG usercode  ; 0x0017D42D                     ;
+; Checksum       ; 0x0017D815                     ;
++----------------+--------------------------------+
 
 
 +--------------------+
@@ -77,15 +77,15 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat May 25 12:09:50 2024
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed May 29 17:33:04 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off REGUAAUTOMATIZADA -c REGUAAUTOMATIZADA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4663 megabytes
-    Info: Processing ended: Sat May 25 12:09:50 2024
+    Info: Peak virtual memory: 328 megabytes
+    Info: Processing ended: Wed May 29 17:33:04 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

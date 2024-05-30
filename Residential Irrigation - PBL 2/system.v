@@ -1,13 +1,13 @@
 // Declaração do modulo
-module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0, l1, l2, l3, l4, l5, l6, selector, d0, d1, d2, d3, clk, a, b, c, d, e, f, g);
+module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0, l1, l2, l3, l4, l5, l6, selector, d0, d1, d2, d3, clk, a, b, c, d, e, f, g, test, test1, test2, test3);
 
 	// Declaração as portas
 	input h, m, l, us, ua, t, selector, clk;
-	output alarme, ValvulaEntrada, l0, l1, l2, l3, l4, l5, l6, a, b, c, d, e, f, g;
+	output alarme, ValvulaEntrada, l0, l1, l2, l3, l4, l5, l6, a, b, c, d, e, f, g, test, test1, test2, test3;
 	inout C0, C1, C2, C3, C4, d0, d1, d2, d3;
 	
 	// Fios intermediarios entre módulos
-	wire gotejamentoWire, aspersaoWire, clk_delay, clk_delay1sec;
+	wire gotejamentoWire, aspersaoWire, clk_delay, clk_delay1sec, pulseWire;
 	wire l0RegaMultiplex, l1RegaMultiplex, l2RegaMultiplex, l3RegaMultiplex, l4RegaMultiplex, l5RegaMultiplex, l6RegaMultiplex;
 	wire l0NivelMultiplex, l1NivelMultiplex, l2NivelMultiplex, l3NivelMultiplex, l4NivelMultiplex, l5NivelMultiplex, l6NivelMultiplex;
 	wire C0Wire, C1Wire, C2Wire, C3Wire, C4Wire;
@@ -139,8 +139,22 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0
 	);
 	
 	
+		binaryToDigit btd (
+		.clk(clk_delay),
+		.d0(d0),
+		.d1(d1),
+		.d2(d2),
+		.d3(d3)
+	);
+	
+	
 	// Instanciação do cronometro
 	cronometro timer(
+		.h(h),
+		.m(m),
+		.l(l),
+		.As(aspersaoWire),
+		.Gt(gotejamentoWire),
 		.d0(d0),
 		.d1(d1),
 		.d2(d2),
@@ -155,8 +169,23 @@ module system(h, m, l, us, ua, t, ValvulaEntrada, alarme, C0, C1, C2, C3, C4, l0
 		.d(d),
 		.e(e),
 		.f(f),
-		.g(g)
+		.g(g),
+		.pulse(pulseWire),
+		.A3(test), 
+		.B3(test1), 
+		.C3(test2), 
+		.D3(test3)
 	);
 	
+	// instanciação do Level to Pulse
+	LevelToPulse LTP(
+		.h(h),
+		.m(m),
+		.l(l),
+		.As(aspersaoWire),
+		.Gt(gotejamentoWire),
+		.clk(clk),
+		.pulse(pulseWire)
+	);
 
 endmodule
